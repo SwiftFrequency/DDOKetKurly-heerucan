@@ -8,8 +8,7 @@ target 'SF-DDoketkurly' do
   # Pods for SF-DDoketkurly
   pod 'SnapKit', '~> 5.0.0'
   pod 'Then'
-  pod 'lottie-ios'
-  pod 'Moya', '~> 14.0'
   pod 'Kingfisher', '~> 6.0'
+  pod 'SwiftGen', '~> 6.0'
 
 end

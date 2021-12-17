@@ -15,6 +15,9 @@
 		5B8EBD3C2769E61800219CC6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5B8EBD3B2769E61800219CC6 /* Assets.xcassets */; };
 		5B8EBD3F2769E61800219CC6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5B8EBD3D2769E61800219CC6 /* LaunchScreen.storyboard */; };
 		5B8EBD542769F2BE00219CC6 /* MockParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B8EBD532769F2BE00219CC6 /* MockParser.swift */; };
+		5BE1D079276CD66A0091D788 /* swiftgen.yml in Resources */ = {isa = PBXBuildFile; fileRef = 5BE1D078276CD66A0091D788 /* swiftgen.yml */; };
+		5BE1D07D276CD7200091D788 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5BE1D07C276CD7200091D788 /* Colors.xcassets */; };
+		5BE1D07F276CE6620091D788 /* Assets+Generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BE1D07E276CE6620091D788 /* Assets+Generated.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +31,9 @@
 		5B8EBD3E2769E61800219CC6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5B8EBD402769E61800219CC6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5B8EBD532769F2BE00219CC6 /* MockParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockParser.swift; sourceTree = "<group>"; };
+		5BE1D078276CD66A0091D788 /* swiftgen.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.yaml; path = swiftgen.yml; sourceTree = "<group>"; };
+		5BE1D07C276CD7200091D788 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
+		5BE1D07E276CE6620091D788 /* Assets+Generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Assets+Generated.swift"; sourceTree = "<group>"; };
 		B9416BEF4DB59529042585E1 /* Pods-SF-DDoketkurly.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SF-DDoketkurly.debug.xcconfig"; path = "Target Support Files/Pods-SF-DDoketkurly/Pods-SF-DDoketkurly.debug.xcconfig"; sourceTree = "<group>"; };
 		F2C7C248B1519107A004FC03 /* Pods-SF-DDoketkurly.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SF-DDoketkurly.release.xcconfig"; path = "Target Support Files/Pods-SF-DDoketkurly/Pods-SF-DDoketkurly.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -47,6 +53,7 @@
 		5B8EBD262769E61300219CC6 = {
 			isa = PBXGroup;
 			children = (
+				5BE1D078276CD66A0091D788 /* swiftgen.yml */,
 				5B8EBD312769E61300219CC6 /* SF-DDoketkurly */,
 				5B8EBD302769E61300219CC6 /* Products */,
 				B1171F0B9C79EB5AC2357A41 /* Pods */,
@@ -87,6 +94,7 @@
 			children = (
 				5B8EBD482769E87C00219CC6 /* Support */,
 				5B8EBD3B2769E61800219CC6 /* Assets.xcassets */,
+				5BE1D07C276CD7200091D788 /* Colors.xcassets */,
 				5B8EBD402769E61800219CC6 /* Info.plist */,
 				5B8EBD382769E61300219CC6 /* Main.storyboard */,
 				5B8EBD3D2769E61800219CC6 /* LaunchScreen.storyboard */,
@@ -137,6 +145,7 @@
 		5B8EBD4E2769F22900219CC6 /* Constant */ = {
 			isa = PBXGroup;
 			children = (
+				5BE1D07E276CE6620091D788 /* Assets+Generated.swift */,
 			);
 			path = Constant;
 			sourceTree = "<group>";
@@ -198,6 +207,7 @@
 			buildConfigurationList = 5B8EBD432769E61800219CC6 /* Build configuration list for PBXNativeTarget "SF-DDoketkurly" */;
 			buildPhases = (
 				45738422CB6D3B30DB68D227 /* [CP] Check Pods Manifest.lock */,
+				5BE1D07A276CD6CA0091D788 /* ShellScript */,
 				5B8EBD2B2769E61300219CC6 /* Sources */,
 				5B8EBD2C2769E61300219CC6 /* Frameworks */,
 				5B8EBD2D2769E61300219CC6 /* Resources */,
@@ -250,9 +260,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5BE1D07D276CD7200091D788 /* Colors.xcassets in Resources */,
 				5B8EBD3F2769E61800219CC6 /* LaunchScreen.storyboard in Resources */,
 				5B8EBD3C2769E61800219CC6 /* Assets.xcassets in Resources */,
 				5B8EBD3A2769E61300219CC6 /* Main.storyboard in Resources */,
+				5BE1D079276CD66A0091D788 /* swiftgen.yml in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -281,6 +293,23 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		5BE1D07A276CD6CA0091D788 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if [[ -f \"${PODS_ROOT}/SwiftGen/bin/swiftgen\" ]]; then\n  \"${PODS_ROOT}/SwiftGen/bin/swiftgen\"\nelse\n  echo \"warning: SwiftGen is not installed. Run 'pod install --repo-update' to install it.\"\nfi\n";
+		};
 		F2A361B453DE754529A68025 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -308,6 +337,7 @@
 				5B8EBD372769E61300219CC6 /* ViewController.swift in Sources */,
 				5B8EBD332769E61300219CC6 /* AppDelegate.swift in Sources */,
 				5B8EBD542769F2BE00219CC6 /* MockParser.swift in Sources */,
+				5BE1D07F276CE6620091D788 /* Assets+Generated.swift in Sources */,
 				5B8EBD352769E61300219CC6 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
