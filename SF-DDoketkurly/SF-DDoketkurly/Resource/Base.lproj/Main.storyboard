@@ -1,24 +1,114 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="0GU-nC-sWm">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--HomeVC-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="HomeVC" title="HomeVC" id="BYZ-38-t0r" customClass="HomeVC" customModule="SF_DDoketkurly" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
+                    <tabBarItem key="tabBarItem" title="홈" image="ic_home_unselect" selectedImage="ic_home" id="28N-Pe-sBs"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="984.05797101449286" y="97.767857142857139"/>
+        </scene>
+        <!--검색-->
+        <scene sceneID="x7V-OG-hqf">
+            <objects>
+                <viewController id="De0-Xk-emU" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="2ln-R5-Uak">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="HLh-3Y-CAF"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="검색" image="ic_search_unselect" selectedImage="ic_search" id="oL7-6k-QZS"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Aph-QS-oDZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-304" y="929"/>
+        </scene>
+        <!--카테고리-->
+        <scene sceneID="xiZ-Tl-g7V">
+            <objects>
+                <viewController id="KoG-56-xbi" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="E8g-xx-ySq">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="6J6-6r-dOg"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="카테고리" image="ic_category_unselect" selectedImage="ic_category" id="4Gq-pB-ceF"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3wo-th-UOd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1103" y="929"/>
+        </scene>
+        <!--마이컬리-->
+        <scene sceneID="hJ0-BJ-Uh4">
+            <objects>
+                <viewController id="weG-XY-Fud" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="GwO-re-oRF">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="5HR-Fp-ntL"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="마이컬리" image="ic_my_unselect" selectedImage="ic_my" id="WYf-d8-2AI"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="VRP-Gs-cby" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="525" y="929"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="jtC-VK-dRb">
+            <objects>
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="0GU-nC-sWm" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="rS1-cH-uzN">
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="selectedImageTintColor" name="kurlyPurple"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="F7D-68-2l6"/>
+                        <segue destination="KoG-56-xbi" kind="relationship" relationship="viewControllers" id="uBf-48-OGP"/>
+                        <segue destination="De0-Xk-emU" kind="relationship" relationship="viewControllers" id="qaw-KF-YSA"/>
+                        <segue destination="weG-XY-Fud" kind="relationship" relationship="viewControllers" id="n6B-7S-NP5"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="AbA-1n-QFH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="73.913043478260875" y="97.767857142857139"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="ic_category" width="22" height="17"/>
+        <image name="ic_category_unselect" width="21" height="16"/>
+        <image name="ic_home" width="22" height="21"/>
+        <image name="ic_home_unselect" width="22" height="21"/>
+        <image name="ic_my" width="22" height="21"/>
+        <image name="ic_my_unselect" width="22" height="21"/>
+        <image name="ic_search" width="19.5" height="20"/>
+        <image name="ic_search_unselect" width="19" height="19.5"/>
+        <namedColor name="kurlyPurple">
+            <color red="0.37254901960784315" green="0.0" blue="0.50196078431372548" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
 </document>
