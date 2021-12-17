@@ -18,6 +18,7 @@
 		5BE1D079276CD66A0091D788 /* swiftgen.yml in Resources */ = {isa = PBXBuildFile; fileRef = 5BE1D078276CD66A0091D788 /* swiftgen.yml */; };
 		5BE1D07D276CD7200091D788 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5BE1D07C276CD7200091D788 /* Colors.xcassets */; };
 		5BE1D07F276CE6620091D788 /* Assets+Generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BE1D07E276CE6620091D788 /* Assets+Generated.swift */; };
+		5BE1D081276CF3D80091D788 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BE1D080276CF3D80091D788 /* Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +35,7 @@
 		5BE1D078276CD66A0091D788 /* swiftgen.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.yaml; path = swiftgen.yml; sourceTree = "<group>"; };
 		5BE1D07C276CD7200091D788 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 		5BE1D07E276CE6620091D788 /* Assets+Generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Assets+Generated.swift"; sourceTree = "<group>"; };
+		5BE1D080276CF3D80091D788 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		B9416BEF4DB59529042585E1 /* Pods-SF-DDoketkurly.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SF-DDoketkurly.debug.xcconfig"; path = "Target Support Files/Pods-SF-DDoketkurly/Pods-SF-DDoketkurly.debug.xcconfig"; sourceTree = "<group>"; };
 		F2C7C248B1519107A004FC03 /* Pods-SF-DDoketkurly.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SF-DDoketkurly.release.xcconfig"; path = "Target Support Files/Pods-SF-DDoketkurly/Pods-SF-DDoketkurly.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -154,16 +156,9 @@
 			isa = PBXGroup;
 			children = (
 				5B8EBD4E2769F22900219CC6 /* Constant */,
-				5B8EBD502769F23B00219CC6 /* Extension */,
+				5BE1D080276CF3D80091D788 /* Extensions.swift */,
 			);
 			path = Global;
-			sourceTree = "<group>";
-		};
-		5B8EBD502769F23B00219CC6 /* Extension */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Extension;
 			sourceTree = "<group>";
 		};
 		5B8EBD512769F26E00219CC6 /* Network */ = {
@@ -335,6 +330,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5B8EBD372769E61300219CC6 /* HomeVC.swift in Sources */,
+				5BE1D081276CF3D80091D788 /* Extensions.swift in Sources */,
 				5B8EBD332769E61300219CC6 /* AppDelegate.swift in Sources */,
 				5B8EBD542769F2BE00219CC6 /* MockParser.swift in Sources */,
 				5BE1D07F276CE6620091D788 /* Assets+Generated.swift in Sources */,
