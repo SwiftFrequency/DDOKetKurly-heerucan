@@ -17,6 +17,7 @@
 		5B90A00427772502000F44CE /* PageCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B90A00327772501000F44CE /* PageCVC.swift */; };
 		5B90A006277726C0000F44CE /* MenuCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B90A005277726C0000F44CE /* MenuCVC.swift */; };
 		5B90A008277728A8000F44CE /* Menu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B90A007277728A8000F44CE /* Menu.swift */; };
+		5B90A00A27773FA1000F44CE /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B90A00927773FA1000F44CE /* Item.swift */; };
 		5BE1D079276CD66A0091D788 /* swiftgen.yml in Resources */ = {isa = PBXBuildFile; fileRef = 5BE1D078276CD66A0091D788 /* swiftgen.yml */; };
 		5BE1D07D276CD7200091D788 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5BE1D07C276CD7200091D788 /* Colors.xcassets */; };
 		5BE1D07F276CE6620091D788 /* Assets+Generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BE1D07E276CE6620091D788 /* Assets+Generated.swift */; };
@@ -39,6 +40,7 @@
 		5B90A00327772501000F44CE /* PageCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageCVC.swift; sourceTree = "<group>"; };
 		5B90A005277726C0000F44CE /* MenuCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuCVC.swift; sourceTree = "<group>"; };
 		5B90A007277728A8000F44CE /* Menu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Menu.swift; sourceTree = "<group>"; };
+		5B90A00927773FA1000F44CE /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 		5BE1D078276CD66A0091D788 /* swiftgen.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.yaml; path = swiftgen.yml; sourceTree = "<group>"; };
 		5BE1D07C276CD7200091D788 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 		5BE1D07E276CE6620091D788 /* Assets+Generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Assets+Generated.swift"; sourceTree = "<group>"; };
@@ -155,6 +157,7 @@
 			children = (
 				5B90A007277728A8000F44CE /* Menu.swift */,
 				5BE1D087276D94ED0091D788 /* Section.swift */,
+				5B90A00927773FA1000F44CE /* Item.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -332,6 +335,7 @@
 				5B90A00427772502000F44CE /* PageCVC.swift in Sources */,
 				5B8EBD372769E61300219CC6 /* HomeVC.swift in Sources */,
 				5BE1D081276CF3D80091D788 /* Extensions.swift in Sources */,
+				5B90A00A27773FA1000F44CE /* Item.swift in Sources */,
 				5B8EBD332769E61300219CC6 /* AppDelegate.swift in Sources */,
 				5BE1D086276CFCF50091D788 /* CustomMenuBar.swift in Sources */,
 				5B90A008277728A8000F44CE /* Menu.swift in Sources */,
