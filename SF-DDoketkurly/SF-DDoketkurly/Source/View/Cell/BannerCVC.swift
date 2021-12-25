@@ -7,6 +7,38 @@
 
 import UIKit
 
+import SnapKit
+import Then
+
 class BannerCVC: UICollectionViewCell {
     
+    static let identifier = "BannerCVC"
+
+    // MARK: - Properties
+        
+    public let bannerImageView = UIImageView().then {
+        $0.contentMode = .scaleAspectFill
+    }
+    
+    // MARK: - Init
+    
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        configure()
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    // MARK: - UI & Layout
+    
+    private func configure() {
+        contentView.addSubview(bannerImageView)
+        
+        bannerImageView.snp.makeConstraints { make in
+            make.edges.equalToSuperview()
+            make.height.equalTo(340)
+        }
+    }
 }
