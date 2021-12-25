@@ -15,9 +15,10 @@ class BannerCVC: UICollectionViewCell {
     static let identifier = "BannerCVC"
 
     // MARK: - Properties
-        
+    
     public let bannerImageView = UIImageView().then {
         $0.contentMode = .scaleAspectFill
+        $0.clipsToBounds = true
     }
     
     // MARK: - Init
@@ -33,7 +34,7 @@ class BannerCVC: UICollectionViewCell {
     
     // MARK: - UI & Layout
     
-    private func configure() {
+    public func configure() {
         contentView.addSubview(bannerImageView)
         
         bannerImageView.snp.makeConstraints { make in
