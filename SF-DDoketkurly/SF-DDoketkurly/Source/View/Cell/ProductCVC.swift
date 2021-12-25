@@ -17,7 +17,7 @@ class ProductCVC: UICollectionViewCell {
         $0.contentMode = .scaleAspectFill
     }
     
-    public let cartButton = UIButton(type: .system).then {
+    private let cartButton = UIButton(type: .system).then {
         $0.setImage(Asset.Assets.btnCart.image, for: .normal)
         $0.layer.cornerRadius = 37 / 2
         $0.clipsToBounds = true

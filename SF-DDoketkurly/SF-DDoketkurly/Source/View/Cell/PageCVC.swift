@@ -15,24 +15,24 @@ class PageCVC: UICollectionViewCell {
     
     // MARK: - Properties
     
-    private let item = ItemBrain()
-    
+    private let item = Item()
+        
     private let layout = UICollectionViewFlowLayout().then {
         $0.scrollDirection = .vertical
     }
     
     private lazy var kurlyRecommendCV = UICollectionView(
         frame: .zero, collectionViewLayout: layout).then {
-        $0.showsVerticalScrollIndicator = false
-        $0.isScrollEnabled = true
-        $0.isPagingEnabled = false
-    }
+            $0.showsVerticalScrollIndicator = false
+            $0.isScrollEnabled = true
+            $0.isPagingEnabled = false
+        }
     
     var dataSource: UICollectionViewDiffableDataSource<Section, Item>!
     typealias SnapShot = NSDiffableDataSourceSnapshot<Section, Item>
     
     // MARK: - Init
-
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         configure()
@@ -55,18 +55,27 @@ class PageCVC: UICollectionViewCell {
 
 extension PageCVC {
     func configureDataSource() {
-        let bannerCellRegistration = UICollectionView.CellRegistration<BannerCVC, Item> { (cell, indexPath, banner) in
+        let bannerCellRegistration = UICollectionView.CellRegistration<BannerCVC, Banner> { (cell, indexPath, banner) in
             cell.bannerImageView.image = banner.image
         }
         
-        let productCellRegistration = UICollectionView.CellRegistration<ProductCVC, Item> { (cell, indexPath, product) in
-            
+        let productCellRegistration = UICollectionView.CellRegistration<ProductCVC, Product> { (cell, indexPath, product) in
+            cell.productImageView.image = product.image
+            cell.productLabel.text = product.name
+            cell.discountLabel.text = "\(String(describing: product.discount))%"
+            cell.priceLabel.text = product.price
+            cell.discountPriceLabel.text = product.discountPrice
         }
         
-//        dataSource = UICollectionViewDiffableDataSource<Section, Item>(collectionView: collectionView) {
-//            (collectionView: UICollectionView, indexPath: IndexPath, identifier: Video) -> UICollectionViewCell? in
-//            // Return the cell.
-//            return
+        dataSource = UICollectionViewDiffableDataSource<Section, Item>(collectionView: kurlyRecommendCV) {
+            (collectionView: UICollectionView, indexPath: IndexPath, item: Item) -> UICollectionViewCell? in
+            guard let section = Section(rawValue: indexPath.section) else { fatalError("Unknown section") }
+            switch section {
+            case .banner:
+                return collectionView.dequeueConfiguredReusableCell(using: bannerCellRegistration, for: indexPath, item: item.banner)
+            case .product:
+                return collectionView.dequeueConfiguredReusableCell(using: productCellRegistration, for: indexPath, item: item.product)
+            }
+        }
     }
-    
 }
