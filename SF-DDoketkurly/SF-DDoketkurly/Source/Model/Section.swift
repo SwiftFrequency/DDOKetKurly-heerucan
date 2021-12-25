@@ -8,12 +8,13 @@
 import Foundation
 
 enum Section: Int, Hashable, CaseIterable, CustomStringConvertible {
-    case banner, product
+    case banner, product, longBanner
 
     var description: String {
         switch self {
         case .banner: return "Banner"
         case .product: return "Product Recommend"
+        case .longBanner: return "Lone Banner"
         }
     }
 }

@@ -10,7 +10,7 @@ import UIKit
 struct Items: Hashable {
     
     enum Category: CaseIterable, CustomStringConvertible {
-        case banner, product
+        case banner, product, longBanner
     }
     
     let image: UIImage
@@ -28,6 +28,7 @@ extension Items.Category {
         switch self {
         case .banner: return "Banner"
         case .product: return "Product"
+        case .longBanner: return "LongBanner"
         }
     }
     
@@ -82,6 +83,35 @@ extension Items.Category {
                       discountPrice: "9,600원",
                       category: self)
             ]
+        case .longBanner:
+            return [
+                Items(image: Asset.Assets.imgLongBanner.image,
+                      name: nil, price: nil, discount: nil, discountPrice: nil, category: self),
+                Items(image: Asset.Assets.imgLongBanner2.image,
+                      name: nil, price: nil, discount: nil, discountPrice: nil, category: self),
+                Items(image: Asset.Assets.imgLongBanner3.image,
+                      name: nil, price: nil, discount: nil, discountPrice: nil, category: self)
+            ]
         }
+    }
+}
+
+struct ItemsBrain {
+    
+    func getBannerImage(index: Int) -> UIImage {
+        return Items.Category.banner.items[index].image
+    }
+    
+    func getProductData(index: Int) -> Items {
+        return Items.Category.product.items[index]
+    }
+    
+    func getDiscountData(index: Int) -> Int {
+        guard let discount = Items.Category.product.items[index].discount else { return Int()}
+        return discount
+    }
+    
+    func getlongBannerImage(index: Int) -> UIImage {
+        return Items.Category.longBanner.items[index].image
     }
 }

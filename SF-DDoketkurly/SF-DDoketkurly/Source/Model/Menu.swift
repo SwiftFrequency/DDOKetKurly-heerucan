@@ -5,7 +5,6 @@
 //  Created by Thisisme Hi on 2021/12/25.
 //
 
-import Foundation
 import UIKit
 
 struct Menu {
