@@ -10,7 +10,7 @@ import UIKit
 class ProductCVC: UICollectionViewCell {
     
     static let identifier = "ProductCVC"
-
+    
     // MARK: - Properties
     
     public let productImageView = UIImageView().then {

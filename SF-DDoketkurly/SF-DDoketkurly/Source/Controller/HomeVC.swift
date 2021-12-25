@@ -98,12 +98,11 @@ extension HomeVC: UICollectionViewDelegate {
 extension HomeVC: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return menu.getMenuCount()
+        return 5
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: PageCVC.identifier, for: indexPath) as? PageCVC else { return UICollectionViewCell() }
-        cell.backgroundColor = menu.menu[indexPath.item].color
         return cell
     }
 }

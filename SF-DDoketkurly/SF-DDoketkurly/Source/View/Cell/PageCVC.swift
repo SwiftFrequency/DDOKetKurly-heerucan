@@ -47,9 +47,14 @@ class PageCVC: UICollectionViewCell {
     }
 }
 
+// MARK: - Extension : Compositional Layout
+
 extension PageCVC {
+    
     private func createLayout() -> UICollectionViewLayout {
-        let sectionProvider = { (sectionIndex: Int, layoutEnvironment: NSCollectionLayoutEnvironment) -> NSCollectionLayoutSection? in
+        let sectionProvider = { (
+            sectionIndex: Int,
+            layoutEnvironment: NSCollectionLayoutEnvironment) -> NSCollectionLayoutSection? in
             
             guard let sectionKind = Section(rawValue: sectionIndex) else { return nil }
             
@@ -109,7 +114,6 @@ extension PageCVC {
                 
                 section = NSCollectionLayoutSection(group: group)
                 section.orthogonalScrollingBehavior = .paging
-
                 
             } else {
                 fatalError("Unknown section!")
@@ -132,7 +136,11 @@ extension PageCVC {
     }
 }
 
+// MARK: - Extension : Data Source + Apply
+
 extension PageCVC {
+    
+    /// 이 부분 Model 비즈니스 로직으로 옮겨줘야 할 거 같은데 뭔가 너무 더러워...
     private func configureDataSource() {
         let bannerCellRegistration = UICollectionView.CellRegistration<BannerCVC, Items> { (cell, indexPath, items) in
             cell.bannerImageView.image = self.itemBrain.getBannerImage(index: indexPath.row)

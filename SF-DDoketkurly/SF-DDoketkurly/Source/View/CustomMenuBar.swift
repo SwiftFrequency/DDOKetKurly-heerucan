@@ -10,6 +10,8 @@ import UIKit
 import SnapKit
 import Then
 
+// MARK: - Delegate
+
 protocol SelectMenuDelegate: HomeVC {
     func selectMenu(index: Int)
 }

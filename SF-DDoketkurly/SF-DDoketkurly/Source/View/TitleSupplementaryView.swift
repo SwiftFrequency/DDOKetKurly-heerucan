@@ -11,9 +11,7 @@ import SnapKit
 import Then
 
 class TitleSupplementaryView: UICollectionReusableView {
-    
-    static let identifier = "TitleSupplementaryView"
-    
+        
     // MARK: - Properties
     
     public let titleLabel = UILabel().then {
