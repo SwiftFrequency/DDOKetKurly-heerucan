@@ -10,10 +10,11 @@ import UIKit
 import SnapKit
 import Then
 
-class HomeVC: UIViewController {
+class HomeVC: UIViewController, SelectMenuDelegate {
     
     // MARK: - Properties
     
+    private let menu = MenuBrain()
     private let naviBar = NaviBar()
     private let menuBar = CustomMenuBar()
     
@@ -57,6 +58,8 @@ class HomeVC: UIViewController {
             make.top.equalTo(menuBar.snp.bottom)
             make.leading.bottom.trailing.equalToSuperview()
         }
+        
+        menuBar.selectMenuDelegate = self
     }
     
     // MARK: - Custom Method
@@ -66,6 +69,28 @@ class HomeVC: UIViewController {
         pageCV.dataSource = self
         pageCV.register(PageCVC.self, forCellWithReuseIdentifier: PageCVC.identifier)
     }
+    
+    func selectMenu(index: Int) {
+        let indexPath = IndexPath(row: index, section: 0)
+        self.pageCV.scrollToItem(at: indexPath, at: .centeredHorizontally, animated: true)
+    }
+}
+
+// MARK: - UICollectionViewDelegate
+
+extension HomeVC: UICollectionViewDelegate {
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        menuBar.indicatorView.snp.updateConstraints { make in
+            make.leading.equalToSuperview().inset(round(scrollView.contentOffset.x)/5)
+        }
+    }
+    
+    func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
+        let itemAt = Int(targetContentOffset.pointee.x / self.view.frame.width)
+        let indexPath = IndexPath(item: itemAt, section: 0)
+        menuBar.menuCV.selectItem(at: indexPath, animated: true, scrollPosition: [])
+    }
 }
 
 // MARK: - UICollectionViewDataSource
@@ -73,11 +98,12 @@ class HomeVC: UIViewController {
 extension HomeVC: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 5
+        return menu.getMenuCount()
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: PageCVC.identifier, for: indexPath) as? PageCVC else { return UICollectionViewCell() }
+        cell.backgroundColor = menu.menu[indexPath.item].color
         return cell
     }
 }

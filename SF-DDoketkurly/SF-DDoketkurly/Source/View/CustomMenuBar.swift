@@ -10,21 +10,26 @@ import UIKit
 import SnapKit
 import Then
 
+protocol SelectMenuDelegate: HomeVC {
+    func selectMenu(index: Int)
+}
+
 class CustomMenuBar: UIView {
 
     // MARK: - Properties
     
     public let menu = MenuBrain()
     
+    public weak var selectMenuDelegate: SelectMenuDelegate?
+    
     private let layout = UICollectionViewFlowLayout().then {
         $0.scrollDirection = .horizontal
     }
     
-    private lazy var menuCV = UICollectionView(
+    public lazy var menuCV = UICollectionView(
         frame: .zero, collectionViewLayout: layout).then {
         $0.isScrollEnabled = false
         $0.showsHorizontalScrollIndicator = false
-
     }
     
     public var indicatorView = UIView().then {
@@ -81,9 +86,24 @@ class CustomMenuBar: UIView {
     }
 }
 
+// MARK: - UICollectionViewDelegate
+
+extension CustomMenuBar: UICollectionViewDelegate {
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        selectMenuDelegate?.selectMenu(index: indexPath.item)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
+        guard let cell = collectionView.cellForItem(at: indexPath) as? MenuCVC else { return }
+        cell.menuLabel.textColor = Asset.Colors.textGray.color
+    }
+}
+
 // MARK: - UICollectionViewDataSource
 
 extension CustomMenuBar: UICollectionViewDataSource {
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return menu.getMenuCount()
     }
@@ -91,7 +111,10 @@ extension CustomMenuBar: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: MenuCVC.identifier, for: indexPath) as? MenuCVC else { return UICollectionViewCell() }
         cell.menuLabel.text = menu.getMenuText(index: indexPath.item)
-        cell.isSelected = true
+        if indexPath.item == 0 {
+            cell.isSelected = true
+            collectionView.selectItem(at: indexPath, animated: false, scrollPosition: .init())
+        }
         return cell
     }
 }
