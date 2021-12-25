@@ -7,14 +7,45 @@
 
 import UIKit
 
+import SnapKit
+import Then
+
 class CustomMenuBar: UIView {
 
-    /*
-    // Only override draw() if you perform custom drawing.
-    // An empty implementation adversely affects performance during animation.
-    override func draw(_ rect: CGRect) {
-        // Drawing code
+    // MARK: - Properties
+    
+    private let layout = UICollectionViewFlowLayout().then {
+        $0.scrollDirection = .horizontal
     }
-    */
+    
+    private lazy var menuCV = UICollectionView(frame: .zero, collectionViewLayout: layout).then {
+        $0.isScrollEnabled = false
+        
+    }
+    
+    // MARK: - Lifecycle
+    
+    override init(frame: CGRect) {
+        super.init(frame: .zero)
+        configUI()
+        setupAutoLayout()
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    // MARK: - UI & Layout
+    
+    func configUI() {
+        backgroundColor = .white
+    }
+    
+    func setupAutoLayout() {
+        
+    }
+    
+    // MARK: - Custom Method
+
 
 }

@@ -23,8 +23,8 @@ internal typealias AssetImageTypeAlias = ImageAsset.Image
 internal enum Asset {
   internal enum Assets {
     internal static let accentColor = ColorAsset(name: "AccentColor")
-    internal static let buttonCart = ImageAsset(name: "buttonCart")
-    internal static let buttonMap = ImageAsset(name: "buttonMap")
+    internal static let btnCart = ImageAsset(name: "btn_Cart")
+    internal static let btnMap = ImageAsset(name: "btn_Map")
     internal static let icCategory = ImageAsset(name: "ic_category")
     internal static let icCategoryUnselect = ImageAsset(name: "ic_category_unselect")
     internal static let icHome = ImageAsset(name: "ic_home")
